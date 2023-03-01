@@ -2,3 +2,5 @@ binary_tree_print.c
 sudo
 test*
 a.out
+*.a
+*.o
