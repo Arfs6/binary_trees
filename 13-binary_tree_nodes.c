@@ -16,7 +16,7 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0); /* invalid tree */
-	if (tree->left != NULL && tree->right != NULL)
+	if (tree->left == NULL && tree->right == NULL)
 		return (0); /* reached the leaf of the tree */
 
 	/* count the number of nodes in each sub-tree */
