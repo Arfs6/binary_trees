@@ -4,7 +4,7 @@
 
 
 /**
- * battery_tree_is_root - checks if the node passed is the root node
+ * binary_tree_is_root - checks if the node passed is the root node
  * @node: node to check
  *
  * Return: 1: node passed is the root
@@ -20,11 +20,16 @@ int binary_tree_is_root(const binary_tree_t *node)
 	{
 		if (node->left == NULL && node->right == NULL)
 			return (1);
-		else if (node->left != NULL && node->left->parent == node && node->right == NULL)
+		else if ((node->left != NULL &&
+					node->left->parent == node &&
+					node->right == NULL))
+		return (1);
+		else if (node->right != NULL &&
+				node->right->parent == node &&
+				node->left == NULL)
 			return (1);
-		else if (node->right != NULL && node->right->parent == node && node->left == NULL)
-			return (1);
-		else if (node->left && node->right && node->left->parent == node && node->right->parent == node)
+		else if (node->left && node->right &&
+				node->left->parent == node && node->right->parent == node)
 			return (1);
 	}
 

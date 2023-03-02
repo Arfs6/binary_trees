@@ -1,0 +1,27 @@
+#include <stddef.h>
+
+#include "binary_trees.h"
+
+
+/**
+ * binary_tree_leaves - get the number of leaves in a tree
+ * @tree: tree to inspect
+ *
+ * Return: number of leafs in the tree or
+ * 0: invalid tree
+ */
+size_t binary_tree_leaves(const binary_tree_t *tree)
+{
+	size_t leaves;
+
+	if (tree == NULL)
+		return (0);
+
+	if (binary_tree_is_leaf(tree))
+		return (1);
+
+	leaves = binary_tree_leaves(tree->left);
+	leaves += binary_tree_leaves(tree->right);
+
+	return (leaves);
+}
