@@ -4,6 +4,8 @@
 #include "binary_trees.h"
 
 
+static size_t _height(const binary_tree_t *tree);
+
 /**
  * _height - returns the height of the binary tree
  * @tree: tree to get height of
@@ -17,7 +19,7 @@ static size_t _height(const binary_tree_t *tree)
 
 	/* printf("in %d:\n", tree->n); */
 
-	if (binary_tree_is_leaf(tree))
+	if (!tree->left && !tree->right)
 	{
 		/* printf("found a leaf: %d\n", tree->n); */
 		return (0);
